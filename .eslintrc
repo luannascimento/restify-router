@@ -137,7 +137,7 @@
       "func-call-spacing": [ 2, "never" ],
       "func-style": [ 2, "declaration" ],
       "function-paren-newline": [ 2, "consistent" ],
-      "indent": [ 2, 4, {
+      "indent": [ 2, 2, {
           "CallExpression": { "arguments": "off" }
       }],
       "key-spacing": [ 2, {
@@ -203,7 +203,7 @@
       "require-jsdoc": [ 2, {
           "require": {
               "FunctionDeclaration": true,
-              "MethodDefinition": true,
+              "MethodDefinition": false,
               "ClassDeclaration": true,
               "ArrowFunctionExpression": false,
               "FunctionExpression": false
