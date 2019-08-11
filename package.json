@@ -15,10 +15,10 @@
     "lib"
   ],
   "keywords": [
-    "restify-router", 
-    "custom router", 
-    "router middleware", 
-    "router validator", 
+    "restify-router",
+    "custom router",
+    "router middleware",
+    "router validator",
     "router group"
   ],
   "author": {
@@ -28,5 +28,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/luannascimento/restify-router/issues"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "restify": "^8.4.0"
   }
 }
