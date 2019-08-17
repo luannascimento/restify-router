@@ -150,7 +150,7 @@
       }],
       "lines-between-class-members": [ 2, "always" ],
       "max-len": [ 2, {
-          "code": 80
+          "code": 90
       }],
       "multiline-ternary": [ 2, "always-multiline" ],
       "new-cap": [ 2, {
