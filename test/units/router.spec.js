@@ -2,12 +2,14 @@
 const restify = require('restify');
 const Router = require('../../lib/Router');
 
-describe('intergration', () => {
+describe('test router', () => {
 
   it('init routes, not found file routes', (done) => {
     const server = restify.createServer();
     try {
-      Router.init(server, {path: '/test/path/api.js'});
+      Router.init(server, {
+        route: '/test/path/api.js'
+      });
       done.fail('expected exception');
     } catch (error) {
       expect(error.message).toBe('file /test/path/api.js not found');
@@ -29,7 +31,7 @@ describe('intergration', () => {
     const server = restify.createServer();
     try {
       Router.init(server, {
-        path: '../exemple/api'
+        route: '../exemple/api'
       });
     } catch (error) {
       done.fail(error);
