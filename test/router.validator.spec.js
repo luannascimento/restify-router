@@ -1,7 +1,7 @@
 'use strict';
 const restify = require('restify');
-const Router = require('../../lib/Router')
-const RouterValidator = require('../../lib/RouterValidator');
+const Router = require('../lib/Router')
+const RouterValidator = require('../lib/RouterValidator');
 
 describe('test router validator', () => {
 
@@ -69,9 +69,12 @@ describe('test router validator', () => {
 
   it('formatHandlers', (done) => {
     try {
-      const routerValidator = new RouterValidator(server, 'validator', (req,res,next) => {})
+      const routerValidator = new RouterValidator(server, {
+        validators: {
+          'validator': (req,res,next) => {}
+        }
+      }, 'validator', (req,res,next) => {})
       const data = routerValidator.formatHandlers((req,res,next) => {})
-
       expect(data.length).toBe(3);
     } catch (error) {
       done.fail(error);

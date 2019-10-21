@@ -1,7 +1,7 @@
 'use strict';
 const restify = require('restify');
-const Router = require('../../lib/Router')
-const RouterMiddleware = require('../../lib/RouterMiddleware');
+const Router = require('../lib/Router')
+const RouterMiddleware = require('../lib/RouterMiddleware');
 
 describe('test router middleware', () => {
   const server = restify.createServer();
@@ -14,7 +14,9 @@ describe('test router middleware', () => {
 
   it('instance', (done) => {
     try {
-      const routerMiddleware = new RouterMiddleware(server)
+      const routerMiddleware = new RouterMiddleware(server,{
+        middlewares: []
+      })
       expect(true);
     } catch (error) {
       done.fail(error);
@@ -68,9 +70,8 @@ describe('test router middleware', () => {
 
   it('formatHandlers', (done) => {
     try {
-      const routerMiddleware = new RouterMiddleware(server,'midd')
+      const routerMiddleware = new RouterMiddleware(server, null, 'midd')
       const data = routerMiddleware.formatHandlers((req,res,next) => {})
-
       expect(data.length).toBe(2);
     } catch (error) {
       done.fail(error);

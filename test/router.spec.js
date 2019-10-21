@@ -1,6 +1,6 @@
 'use strict';
 const restify = require('restify');
-const Router = require('../../lib/Router');
+const Router = require('../lib/Router');
 
 describe('test router', () => {
 

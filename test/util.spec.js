@@ -1,5 +1,5 @@
 'use strict';
-const util = require('../../lib/util');
+const util = require('../lib/util');
 
 describe('test util', () => {
 

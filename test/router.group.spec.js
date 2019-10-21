@@ -1,7 +1,7 @@
 'use strict';
 const restify = require('restify');
-const Router = require('../../lib/Router')
-const RouterGroup = require('../../lib/RouterGroup');
+const Router = require('../lib/Router')
+const RouterGroup = require('../lib/RouterGroup');
 
 describe('test router group', () => {
 
@@ -69,9 +69,8 @@ describe('test router group', () => {
 
   it('formatHandlers', (done) => {
     try {
-      const routerGroup = new RouterGroup(server,'/test', 'midd')
+      const routerGroup = new RouterGroup(server,'/test', null, 'midd')
       const data = routerGroup.formatHandlers((req,res,next) => {})
-
       expect(data.length).toBe(2);
     } catch (error) {
       done.fail(error);
